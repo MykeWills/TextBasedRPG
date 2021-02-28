@@ -14,7 +14,7 @@ namespace TextBasedRPGProject
             Console.WriteLine("Running the game now");
 
 
-
+            Enemy enemy = new Enemy();
             Player player = new Player();
 
 
@@ -22,11 +22,12 @@ namespace TextBasedRPGProject
 
             while (true)
             {
-                player.Update();
-
+                //player.Update();
+                enemy.Update();
 
 
                 player.Draw();
+                enemy.Draw();
             }
 
         }
