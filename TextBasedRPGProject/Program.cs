@@ -11,11 +11,11 @@ namespace TextBasedRPGProject
         static void Main(string[] args)
         {
             Console.WriteLine("This is the start of the project");
-          
+            Console.CursorVisible = false;
             GameManager gameManager = new GameManager();
             gameManager.RunGame();
 
-            Console.ReadKey();
+            Console.ReadKey(true);
 
         }
     }
