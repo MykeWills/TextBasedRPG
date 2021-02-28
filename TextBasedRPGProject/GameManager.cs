@@ -18,11 +18,9 @@ namespace TextBasedRPGProject
             Player player = new Player();
 
 
-
-
             while (true)
             {
-                //player.Update();
+                player.Update();
                 enemy.Update();
 
 

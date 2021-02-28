@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace TextBasedRPGProject
 {
-    class Enemy
+    class Enemy : GameCharacter
     {
-        private char avatar;
-        private string name;
-        private int positionX;
-        private int positionY;
-        private int health;
         Random random = new Random();
        
         public Enemy()
@@ -44,10 +39,6 @@ namespace TextBasedRPGProject
                     break;
             }
         }
-        public void Draw()
-        {
-            Console.SetCursorPosition(positionX, positionY);
-            Console.Write(avatar);
-        }
+      
     }
 }

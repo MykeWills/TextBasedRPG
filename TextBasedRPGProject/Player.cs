@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace TextBasedRPGProject
 {
-    class Player
+    class Player : GameCharacter
     {
-        private char avatar;
-        private string name;
-        private int positionX;
-        private int positionY;
-        private int health;
-
         public Player()
         {
             avatar = '@';
@@ -47,10 +41,6 @@ namespace TextBasedRPGProject
                     break;
             }
         }
-        public void Draw()
-        {
-            Console.SetCursorPosition(positionX, positionY);
-            Console.Write(avatar);
-        }
+     
     }
 }
