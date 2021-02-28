@@ -10,6 +10,8 @@ namespace TextBasedRPGProject
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("This is the start of the project");
+            Console.ReadKey();
         }
     }
 }
