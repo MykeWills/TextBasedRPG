@@ -8,7 +8,7 @@ namespace TextBasedRPGProject
 {
     class Map
     {
-        private char[,] map = new char[54, 21];
+        private char[,] map;
         public Map()
         {
             LoadMap();
@@ -17,6 +17,7 @@ namespace TextBasedRPGProject
         {
 
             string[] lines = System.IO.File.ReadAllLines("map.txt");
+            map = new char[lines[0].Length, lines.Length];
             for (int y = 0; y < lines.Length; y++)
             {
                 string line = lines[y];
