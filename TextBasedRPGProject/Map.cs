@@ -28,6 +28,13 @@ namespace TextBasedRPGProject
             }
 
         }
+        public bool IsWall(int x, int y)
+        {
+            if (map[x, y] == '#') 
+                return true;
+            else 
+                return false;
+        }
         public void Update()
         {
 

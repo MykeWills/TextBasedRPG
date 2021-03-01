@@ -20,8 +20,8 @@ namespace TextBasedRPGProject
 
             while (true)
             {
-                player.Update();
-                enemy.Update();
+                player.Update(map);
+                enemy.Update(map);
                 map.Update();
 
 

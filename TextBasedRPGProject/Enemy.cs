@@ -18,22 +18,22 @@ namespace TextBasedRPGProject
             positionY = Console.WindowHeight / 4;
             health = 1;
         }
-        public void Update()
+        public void Update(Map map)
         {
             int rnd = random.Next(5);
             switch (rnd)
             {
                 case 0:
-                    positionY++;
+                    if (!map.IsWall(positionX, positionY + 1)) positionY++;
                     break;
                 case 1:
-                    positionY--;
+                    if (!map.IsWall(positionX, positionY - 1)) positionY--;
                     break;
                 case 2:
-                    positionX--;
+                    if (!map.IsWall(positionX - 1, positionY)) positionX--;
                     break;
                 case 3:
-                    positionX++;
+                    if (!map.IsWall(positionX + 1, positionY)) positionX++;
                     break;
                 case 4:
                     break;

@@ -16,7 +16,7 @@ namespace TextBasedRPGProject
             positionY = Console.WindowHeight / 2;
             health = 100;
         }
-        public void Update()
+        public void Update(Map map)
         {
             ConsoleKeyInfo input;
             input = Console.ReadKey(true);
@@ -25,19 +25,19 @@ namespace TextBasedRPGProject
             {
                 case ConsoleKey.S:
                 case ConsoleKey.DownArrow:
-                    positionY++;
-                        break;
+                    if (!map.IsWall(positionX, positionY + 1)) positionY++;
+                    break;
                 case ConsoleKey.W:
                 case ConsoleKey.UpArrow:
-                    positionY--;
+                    if (!map.IsWall(positionX, positionY - 1)) positionY--;
                     break;
                 case ConsoleKey.A:
                 case ConsoleKey.LeftArrow:
-                    positionX--;
+                    if (!map.IsWall(positionX - 1, positionY)) positionX--;
                     break;
                 case ConsoleKey.D:
                 case ConsoleKey.RightArrow:
-                    positionX++;
+                    if (!map.IsWall(positionX + 1, positionY)) positionX++;
                     break;
             }
         }
