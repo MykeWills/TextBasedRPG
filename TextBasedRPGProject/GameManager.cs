@@ -13,7 +13,7 @@ namespace TextBasedRPGProject
         {
             Console.WriteLine("Running the game now");
 
-
+            Map map = new Map();
             Enemy enemy = new Enemy();
             Player player = new Player();
 
@@ -22,10 +22,15 @@ namespace TextBasedRPGProject
             {
                 player.Update();
                 enemy.Update();
+                map.Update();
 
 
-                player.Draw();
+
+
+                Console.Clear();
+                map.Draw();
                 enemy.Draw();
+                player.Draw();
             }
 
         }
