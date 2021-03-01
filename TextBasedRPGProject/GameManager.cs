@@ -25,9 +25,6 @@ namespace TextBasedRPGProject
                 map.Update();
 
 
-
-
-                Console.Clear();
                 map.Draw();
                 enemy.Draw();
                 player.Draw();
