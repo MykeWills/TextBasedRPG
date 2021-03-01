@@ -11,8 +11,6 @@ namespace TextBasedRPGProject
        
         public void RunGame()
         {
-            Console.WriteLine("Running the game now");
-
             Map map = new Map();
             Enemy enemy = new Enemy();
             Player player = new Player();
