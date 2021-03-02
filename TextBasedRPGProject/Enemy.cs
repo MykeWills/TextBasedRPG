@@ -16,8 +16,8 @@ namespace TextBasedRPGProject
             SetMap(map);
             avatar = 'E';
             name = "Slime";
-            x = Console.WindowWidth / 4;
-            y = Console.WindowHeight / 4;
+            position.x = Console.WindowWidth / 4;
+            position.y = Console.WindowHeight / 4;
             health = 1;
         }
         public void Update()

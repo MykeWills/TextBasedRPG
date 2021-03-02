@@ -8,11 +8,15 @@ namespace TextBasedRPGProject
 {
     abstract class GameCharacter
     {
+        protected struct Point2D
+        {
+            public int x;
+            public int y;
+        }
         private Map map;
         protected char avatar;
         protected string name;
-        protected int x;
-        protected int y;
+        protected Point2D position;
         protected int health;
 
         public void SetMap(Map map)
@@ -21,10 +25,10 @@ namespace TextBasedRPGProject
         }
         public void TryMove(int dx, int dy)
         {
-            if(!map.IsWall(x + dx, y + dy))
+            if(!map.IsWall(position.x + dx, position.y + dy))
             {
-                x += dx;
-                y += dy;
+                position.x += dx;
+                position.y += dy;
             }
         }
         public GameCharacter()
@@ -33,7 +37,7 @@ namespace TextBasedRPGProject
         }
         public void Draw()
         {
-            Console.SetCursorPosition(x, y);
+            Console.SetCursorPosition(position.x, position.y);
             Console.Write(avatar);
         }
     }

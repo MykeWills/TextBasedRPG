@@ -13,8 +13,8 @@ namespace TextBasedRPGProject
             SetMap(map);
             avatar = '@';
             name = "N163LPH03N1X";
-            x = Console.WindowWidth / 2;
-            y = Console.WindowHeight / 2;
+            position.x = Console.WindowWidth / 2;
+            position.y = Console.WindowHeight / 2;
             health = 100;
         }
         public void Update()
