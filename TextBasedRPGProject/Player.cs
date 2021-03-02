@@ -11,14 +11,22 @@ namespace TextBasedRPGProject
         public Player(Map map)
         {
             SetMap(map);
-            avatar = '@';
+            avatar = '8';
             name = "N163LPH03N1X";
+            fGColor = ConsoleColor.Cyan;
+            bGColor = ConsoleColor.Black;
             position.x = Console.WindowWidth / 2;
             position.y = Console.WindowHeight / 2;
             health = 100;
         }
         public void Update()
         {
+          
+            while (Console.KeyAvailable)
+            {
+                Console.ReadKey(true);
+            }
+
             ConsoleKeyInfo input;
             input = Console.ReadKey(true);
 

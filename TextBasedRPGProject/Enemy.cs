@@ -16,6 +16,8 @@ namespace TextBasedRPGProject
             SetMap(map);
             avatar = 'E';
             name = "Slime";
+            fGColor = ConsoleColor.Red;
+            bGColor = ConsoleColor.Black;
             position.x = Console.WindowWidth / 4;
             position.y = Console.WindowHeight / 4;
             health = 1;

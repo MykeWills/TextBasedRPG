@@ -15,6 +15,8 @@ namespace TextBasedRPGProject
         }
         private Map map;
         protected char avatar;
+        protected ConsoleColor fGColor;
+        protected ConsoleColor bGColor;
         protected string name;
         protected Point2D position;
         protected int health;
@@ -37,8 +39,14 @@ namespace TextBasedRPGProject
         }
         public void Draw()
         {
+            ConsoleColor consoleFColor = Console.ForegroundColor;
+            ConsoleColor consoleBColor = Console.BackgroundColor;
             Console.SetCursorPosition(position.x, position.y);
+            Console.ForegroundColor = fGColor;
+            Console.BackgroundColor = bGColor;
             Console.Write(avatar);
+            Console.ForegroundColor = consoleFColor;
+            Console.BackgroundColor = consoleBColor;
         }
     }
 }

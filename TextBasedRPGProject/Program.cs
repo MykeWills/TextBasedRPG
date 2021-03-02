@@ -10,6 +10,8 @@ namespace TextBasedRPGProject
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.CursorVisible = false;
             GameManager gameManager = new GameManager();
 
