@@ -10,30 +10,32 @@ namespace TextBasedRPGProject
     {
         Random random = new Random();
        
-        public Enemy()
+        public Enemy(Map map)
         {
+
+            SetMap(map);
             avatar = 'E';
             name = "Slime";
-            positionX = Console.WindowWidth / 4;
-            positionY = Console.WindowHeight / 4;
+            x = Console.WindowWidth / 4;
+            y = Console.WindowHeight / 4;
             health = 1;
         }
-        public void Update(Map map)
+        public void Update()
         {
             int rnd = random.Next(5);
             switch (rnd)
             {
                 case 0:
-                    if (!map.IsWall(positionX, positionY + 1)) positionY++;
+                    TryMove(0, -1);
                     break;
                 case 1:
-                    if (!map.IsWall(positionX, positionY - 1)) positionY--;
+                    TryMove(0, 1);
                     break;
                 case 2:
-                    if (!map.IsWall(positionX - 1, positionY)) positionX--;
+                    TryMove(-1, 0);
                     break;
                 case 3:
-                    if (!map.IsWall(positionX + 1, positionY)) positionX++;
+                    TryMove(1, 0);
                     break;
                 case 4:
                     break;

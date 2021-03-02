@@ -8,36 +8,37 @@ namespace TextBasedRPGProject
 {
     class Player : GameCharacter
     {
-        public Player()
+        public Player(Map map)
         {
+            SetMap(map);
             avatar = '@';
             name = "N163LPH03N1X";
-            positionX = Console.WindowWidth / 2;
-            positionY = Console.WindowHeight / 2;
+            x = Console.WindowWidth / 2;
+            y = Console.WindowHeight / 2;
             health = 100;
         }
-        public void Update(Map map)
+        public void Update()
         {
             ConsoleKeyInfo input;
             input = Console.ReadKey(true);
 
             switch (input.Key)
             {
-                case ConsoleKey.S:
-                case ConsoleKey.DownArrow:
-                    if (!map.IsWall(positionX, positionY + 1)) positionY++;
-                    break;
                 case ConsoleKey.W:
                 case ConsoleKey.UpArrow:
-                    if (!map.IsWall(positionX, positionY - 1)) positionY--;
+                    TryMove(0, -1);
+                    break;
+                case ConsoleKey.S:
+                case ConsoleKey.DownArrow:
+                    TryMove(0, 1);
                     break;
                 case ConsoleKey.A:
                 case ConsoleKey.LeftArrow:
-                    if (!map.IsWall(positionX - 1, positionY)) positionX--;
+                    TryMove(-1, 0);
                     break;
                 case ConsoleKey.D:
                 case ConsoleKey.RightArrow:
-                    if (!map.IsWall(positionX + 1, positionY)) positionX++;
+                    TryMove(1, 0);
                     break;
             }
         }

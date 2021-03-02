@@ -8,18 +8,16 @@ namespace TextBasedRPGProject
 {
     class GameManager
     {
-       
         public void RunGame()
         {
             Map map = new Map();
-            Enemy enemy = new Enemy();
-            Player player = new Player();
-
+            Enemy enemy = new Enemy(map);
+            Player player = new Player(map);
 
             while (true)
             {
-                player.Update(map);
-                enemy.Update(map);
+                player.Update();
+                enemy.Update();
                 map.Update();
 
 
