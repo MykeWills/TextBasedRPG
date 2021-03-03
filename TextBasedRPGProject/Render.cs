@@ -8,7 +8,8 @@ namespace TextBasedRPGProject
 {
     class Render
     {
-        private Tile[,] backBuffer;
+        private Tile[,] backBufferCurr;
+        private Tile[,] backBufferPrev;
         int height;
         int width;
 
@@ -16,22 +17,29 @@ namespace TextBasedRPGProject
         {
             width = Console.WindowWidth;
             height = Console.WindowHeight - 1;
-            backBuffer = new Tile[width, height];
+            backBufferCurr = new Tile[width, height];
+            backBufferPrev = new Tile[width, height];
         }
         public void Draw(Tile tile, Point2D position)
         {
-            backBuffer[position.x, position.y] = tile;
+            backBufferCurr[position.x, position.y] = tile;
         }
         public void Display()
         {
-            Console.SetCursorPosition(0, 0);
+          
             for(int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)
                 {
-                    Console.ForegroundColor = backBuffer[x, y].fGColor;
-                    Console.BackgroundColor = backBuffer[x, y].bGColor;
-                    Console.Write(backBuffer[x, y].character);
+                    if (!Equals(backBufferCurr[x, y], backBufferPrev[x, y]))
+                    {
+                        Console.SetCursorPosition(x, y);
+                        Console.ForegroundColor = backBufferCurr[x, y].fGColor;
+                        Console.BackgroundColor = backBufferCurr[x, y].bGColor;
+                        Console.Write(backBufferCurr[x, y].character);
+
+                        backBufferPrev[x, y] = backBufferCurr[x, y];
+                    }
                 }
             }
         }
