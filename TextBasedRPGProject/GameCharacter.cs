@@ -14,6 +14,10 @@ namespace TextBasedRPGProject
         protected string name;
         protected Point2D position;
         protected int health;
+        public Point2D Position
+        {
+            get => position;
+        }
 
         public void SetMap(Map map)
         {

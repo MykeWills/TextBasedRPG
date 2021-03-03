@@ -14,7 +14,7 @@ namespace TextBasedRPGProject
             Enemy enemy = new Enemy(map);
             Player player = new Player(map);
             Render render = new Render();
-
+            HUD hud = new HUD();
             while (true)
             {
                 player.Update();
@@ -25,6 +25,7 @@ namespace TextBasedRPGProject
                 map.Draw(render);
                 enemy.Draw(render);
                 player.Draw(render);
+                hud.Draw();
                 render.Display();
             }
 
