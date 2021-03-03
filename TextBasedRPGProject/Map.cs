@@ -8,12 +8,7 @@ namespace TextBasedRPGProject
 {
     class Map
     {
-        private struct Tile
-        {
-            public char chr;
-            public ConsoleColor fGColor;
-            public ConsoleColor bGColor;
-        }
+    
 
         private Tile[,] map;
 
@@ -34,7 +29,7 @@ namespace TextBasedRPGProject
                 {
                     char ch = line[x];
 
-                    map[x, y].chr = ch;
+                    map[x, y].character = ch;
                     map[x, y].fGColor = ConsoleColor.White;
                     map[x, y].bGColor = ConsoleColor.Black;
                     if(ch == '^')
@@ -58,7 +53,7 @@ namespace TextBasedRPGProject
         }
         public bool IsWall(int x, int y)
         {
-            if (map[x, y].chr == '#') 
+            if (map[x, y].character == '#') 
                 return true;
             else 
                 return false;
@@ -67,19 +62,17 @@ namespace TextBasedRPGProject
         {
 
         }
-        public void Draw()
+        public void Draw(Render render)
         {
-
-            Console.SetCursorPosition(0, 0);
             for (int y = 0; y < map.GetLength(1); y++)
             {
                 for (int x = 0; x < map.GetLength(0); x++)
                 {
-                    Console.ForegroundColor = map[x,y].fGColor;
-                    Console.BackgroundColor = map[x, y].bGColor;
-                    Console.Write(map[x, y].chr);
+                    Point2D temp;
+                    temp.x = x;
+                    temp.y = y;
+                    render.Draw(map[x, y], temp);
                 }
-                Console.WriteLine();
             }
         }
     }

@@ -13,6 +13,7 @@ namespace TextBasedRPGProject
             Map map = new Map();
             Enemy enemy = new Enemy(map);
             Player player = new Player(map);
+            Render render = new Render();
 
             while (true)
             {
@@ -21,9 +22,10 @@ namespace TextBasedRPGProject
                 map.Update();
 
 
-                map.Draw();
-                enemy.Draw();
-                player.Draw();
+                map.Draw(render);
+                enemy.Draw(render);
+                player.Draw(render);
+                render.Display();
             }
 
         }

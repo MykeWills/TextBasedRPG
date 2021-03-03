@@ -8,15 +8,9 @@ namespace TextBasedRPGProject
 {
     abstract class GameCharacter
     {
-        protected struct Point2D
-        {
-            public int x;
-            public int y;
-        }
+        
         private Map map;
-        protected char avatar;
-        protected ConsoleColor fGColor;
-        protected ConsoleColor bGColor;
+        protected Tile avatar;
         protected string name;
         protected Point2D position;
         protected int health;
@@ -37,16 +31,9 @@ namespace TextBasedRPGProject
         {
             Console.WriteLine("Game Character");
         }
-        public void Draw()
+        public void Draw(Render render)
         {
-            ConsoleColor consoleFColor = Console.ForegroundColor;
-            ConsoleColor consoleBColor = Console.BackgroundColor;
-            Console.SetCursorPosition(position.x, position.y);
-            Console.ForegroundColor = fGColor;
-            Console.BackgroundColor = bGColor;
-            Console.Write(avatar);
-            Console.ForegroundColor = consoleFColor;
-            Console.BackgroundColor = consoleBColor;
+            render.Draw(avatar, position);
         }
     }
 }

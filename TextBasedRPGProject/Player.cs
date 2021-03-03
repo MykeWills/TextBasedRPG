@@ -11,10 +11,10 @@ namespace TextBasedRPGProject
         public Player(Map map)
         {
             SetMap(map);
-            avatar = '8';
+            avatar.character = '8';
+            avatar.fGColor = ConsoleColor.Cyan;
+            avatar.bGColor = ConsoleColor.Black;
             name = "N163LPH03N1X";
-            fGColor = ConsoleColor.Cyan;
-            bGColor = ConsoleColor.Black;
             position.x = Console.WindowWidth / 2;
             position.y = Console.WindowHeight / 2;
             health = 100;
