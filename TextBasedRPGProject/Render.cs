@@ -20,7 +20,24 @@ namespace TextBasedRPGProject
             backBufferCurr = new Tile[width, height];
             backBufferPrev = new Tile[width, height];
         }
-        public void Draw(Tile tile, Point2D position)
+        public void Write(string str, Coord2D position)
+        {
+            Tile tile;
+            Coord2D coord2D;
+
+            for(int i = 0; i < str.Length; i++)
+            {
+                tile.character = str[i];
+                tile.fGColor = ConsoleColor.White;
+                tile.bGColor = ConsoleColor.Black;
+
+                coord2D.x = position.x + i;
+                coord2D.y = position.y;
+                Draw(tile, coord2D);
+            }
+
+        }
+        public void Draw(Tile tile, Coord2D position)
         {
             backBufferCurr[position.x, position.y] = tile;
         }

@@ -8,18 +8,18 @@ namespace TextBasedRPGProject
 {
     class HUD
     {
-        private string output;
+        private string pOutput;
+        private string eOutput;
 
-        public void Update(Player player)
+        public void Update(Player player, Enemy enemy)
         {
-            output = "Player Position: " + player.Position;
+            pOutput = "Player: " + player.Position;
+            eOutput = "Enemy: " + enemy.Position;
         }
         public void Draw(Render render)
         {
-            for(int c = 0; c < output.Length; c++)
-            {
-
-            }
+            render.Write(pOutput, new Coord2D(0, 0));
+            render.Write(eOutput, new Coord2D(0, 1));
         }
     }
 }

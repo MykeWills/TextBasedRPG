@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TextBasedRPGProject
 {
-    public  struct Point2D
+    class Global
     {
-        public int x;
-        public int y;
+
     }
+
 }

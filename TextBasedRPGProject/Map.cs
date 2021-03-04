@@ -68,7 +68,7 @@ namespace TextBasedRPGProject
             {
                 for (int x = 0; x < map.GetLength(0); x++)
                 {
-                    Point2D temp;
+                    Coord2D temp;
                     temp.x = x;
                     temp.y = y;
                     render.Draw(map[x, y], temp);

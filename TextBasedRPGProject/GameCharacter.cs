@@ -12,9 +12,9 @@ namespace TextBasedRPGProject
         private Map map;
         protected Tile avatar;
         protected string name;
-        protected Point2D position;
+        protected Coord2D position;
         protected int health;
-        public Point2D Position
+        public Coord2D Position
         {
             get => position;
         }

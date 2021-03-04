@@ -20,12 +20,12 @@ namespace TextBasedRPGProject
                 player.Update();
                 enemy.Update();
                 map.Update();
-
+                hud.Update(player, enemy);
 
                 map.Draw(render);
                 enemy.Draw(render);
                 player.Draw(render);
-                hud.Draw();
+                hud.Draw(render);
                 render.Display();
             }
 
